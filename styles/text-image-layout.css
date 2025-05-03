@@ -1,5 +1,4 @@
-/* Text and image layout for displaying text on the left and image on the right */
-.text-image-layout {
+Text and image layout for displaying text on the left and image on the right .text-image-layout {
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;

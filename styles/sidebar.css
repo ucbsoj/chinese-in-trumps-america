@@ -1,0 +1,391 @@
+/* Sidebar styles - Consolidated from main.css and sidebar.css */
+
+.sidebar-overlay {
+  position: fixed;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent overlay */
+  display: flex;
+  justify-content: flex-end;
+  z-index: 1000;
+  visibility: hidden;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  cursor: default; /* Keep the default arrow cursor */
+}
+
+.sidebar-overlay.show {
+  visibility: visible;
+  opacity: 1;
+  cursor: default; /* Ensure the cursor remains as an arrow when visible */
+}
+
+.sidebar {
+  background: white;
+  width: 400px;
+  max-width: 90%;
+  height: 100%;
+  overflow-y: auto;
+  transform: translateX(100%);
+  transition: transform 0.3s ease;
+  padding: 30px;
+  padding-bottom: 80px; /* Increased padding at the bottom */
+  box-shadow: -5px 0 15px rgba(0, 0, 0, 0.2);
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+  position: relative;
+  cursor: default; /* Reset cursor to default for the sidebar content */
+  z-index: 1001; /* Higher than the overlay to ensure it's on top */
+  -webkit-overflow-scrolling: touch; /* Smooth scrolling on iOS */
+  scroll-padding-bottom: 100px; /* Ensures content isn't hidden behind the bottom edge when scrolling */
+}
+
+.sidebar-overlay.show .sidebar {
+  transform: translateX(0);
+}
+
+.sidebar p {
+  font-size: 16px;
+  line-height: 1.6;
+  margin-bottom: 15px;
+  font-family: "lora", Georgia, "Times New Roman", Times, serif;
+}
+
+.sidebar h2 {
+  font-size: 24px;
+  margin-top: 20px;
+  margin-bottom: 20px;
+  text-align: left;
+  padding-right: 30px;
+}
+
+/* Ensure the last paragraph has extra margin to be fully visible */
+.sidebar p:last-child {
+  margin-bottom: 20px; /* Increased margin for more space at the bottom */
+  padding-bottom: 10px; /* Additional padding */
+  position: relative; /* Enable positioning context */
+}
+
+/* Add a pseudo-element after the last paragraph for extra space */
+.sidebar p:last-child::after {
+  content: "";
+  display: block;
+  height: 10px; /* Height of the extra space */
+  width: 100%;
+  position: absolute;
+  bottom: -10px;
+}
+
+/* Styling for the image in the sidebar */
+.sidebar-story-image {
+  margin: 0 -30px 20px; /* Negative margin to stretch beyond the padding */
+  width: calc(100% + 60px); /* Compensate for the negative margins */
+  max-height: 500px; /* Set a reasonable max height */
+  overflow: hidden;
+  position: relative; /* For positioning the caption */
+}
+
+.sidebar-story-image img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.close-sidebar {
+  position: absolute;
+  top: 10px;
+  right: 15px;
+  font-size: 24px;
+  font-weight: bold;
+  background: none;
+  border: none;
+  cursor: pointer;
+  width: 30px;
+  height: 30px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  border-radius: 50%;
+  background-color: #f5f5f5;
+  transition: background-color 0.2s, transform 0.2s;
+  z-index: 1002; /* Ensure it's above all other sidebar content */
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.2);
+}
+
+.close-sidebar:hover {
+  background-color: #e0e0e0;
+  transform: scale(1.1);
+}
+
+.close-sidebar:active {
+  transform: scale(0.95);
+}
+
+/* Sidebar card styles */
+.sidebar-card-wrapper {
+  background: #e4e3e3; /* Light gray background */
+  width: 100vw; /* Full viewport width */
+  margin-left: calc(-50vw + 50%); /* Center the element regardless of parent container */
+  padding: 40px 0; /* Vertical padding only */
+  position: relative; /* For proper positioning */
+  margin-bottom: 40px;
+  margin-top: 40px;
+}
+
+.sidebar-card-content {
+  max-width: 800px; /* Content width remains limited */
+  margin: 0 auto; /* Center the content */
+  padding: 0 20px; /* Horizontal padding for the content */
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+  box-sizing: border-box; /* Include padding in width calculation */
+}
+
+.sidebar-story-category {
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  color: #666;
+  font-size: 9px;
+  margin-bottom: 15px;
+  font-weight: normal;
+  position: relative;
+  padding-bottom: 10px;
+  max-width: 800px;
+  margin-left: auto;
+  margin-right: auto;
+}
+/* Add a shorter line under the category text */
+.sidebar-story-category:after {
+  content: "";
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 335px; /* Shorter line as requested */
+  height: 1px;
+  background-color: #ccc;
+}
+
+.sidebar-title {
+  font-size: 24px;
+  margin-bottom: 20px;
+  font-weight: bold;
+  color: #333;
+}
+
+/* Create a magazine-style layout with text and image side by side */
+.sidebar-card-row {
+  display: flex;
+  flex-direction: row;
+  gap: 30px;
+  align-items: stretch; /* Make all children stretch to match the tallest element */
+}
+
+.sidebar-content {
+  flex: 3; /* Takes up more space than the image */
+  text-align: left;
+  font-size: 16px;
+  line-height: 1.6;
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start; /* Align content to the top */
+  padding-left: 20px; /* Add padding to maintain spacing from the edge */
+}
+
+.sidebar-image {
+  flex: 2; /* Takes up less space than the text */
+  margin-right: -20px; /* Negative margin to allow the image to extend to the edge */
+  overflow: hidden; /* Ensure the image doesn't spill out */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.sidebar-image img {
+  width: 100%;
+  height: 90%;
+  object-fit: cover;
+  object-position: center;
+  border-radius: 0;
+  display: block;
+  max-height: none;
+  min-height: 250px;
+}
+
+.sidebar-button {
+  margin-top: 20px;
+  text-align: center;
+}
+
+.open-sidebar {
+  background: rgb(238, 236, 236);
+  border: 2px solid black;
+  padding: 10px 20px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background 0.2s, color 0.2s;
+  display: inline-block; /* Allow the button to be centered */
+  min-width: 200px; /* Give the button a consistent width */
+  text-align: center; /* Center the text within the button */
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
+  font-size: 14px;
+  letter-spacing: 0.5px;
+}
+
+.open-sidebar:hover {
+  background: black;
+  color: white;
+}
+
+/* Special styling for sidebar story images */
+.sidebar-story-content figure {
+  margin: 1rem 0 2rem 0;
+  width: 100%;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+}
+
+.sidebar-story-content figure img {
+  width: 100%;
+  height: auto;
+  max-height: 300px;
+  object-fit: cover;
+  object-position: center;
+  display: block;
+}
+
+.sidebar-story-content figure figcaption {
+  margin-top: 8px;
+  font-size: 14px;
+  color: #666;
+  font-style: italic;
+  line-height: 1.4;
+}
+
+.sidebar-spacer {
+  height: 50px; /* Extra space at the bottom of the sidebar */
+}
+
+/* Responsive design for sidebar */
+@media (max-width: 768px) {
+  .sidebar {
+    width: 100%; /* Full width on mobile */
+    max-width: 100%;
+    padding: 20px; /* Smaller padding on mobile */
+    padding-bottom: 70px; /* Increased padding at the bottom for mobile */
+  }
+
+  .sidebar h2 {
+    font-size: 20px; /* Smaller heading on mobile */
+    padding-right: 40px; /* More space for the close button */
+  }
+
+  .sidebar p {
+    font-size: 15px; /* Slightly smaller text on mobile */
+  }
+
+  .sidebar-card-row {
+    flex-direction: column; /* Stack content and image vertically */
+    gap: 20px;
+  }
+
+  .sidebar-content {
+    padding-left: 0; /* Remove left padding on mobile */
+    order: 2; /* Move content below image on mobile */
+  }
+
+  .sidebar-image {
+    margin-right: 0; /* Remove negative margin on mobile */
+    margin: 0 -20px; /* Stretch image full width on mobile */
+    order: 1; /* Move image above content on mobile */
+  }
+
+  .open-sidebar {
+    min-width: 180px; /* Slightly smaller button on mobile */
+    font-size: 13px;
+    padding: 8px 15px;
+    width: 100%; /* Full width button on very small screens */
+    max-width: 250px;
+  }
+
+  .sidebar-button {
+    margin-top: 15px;
+  }
+
+  /* Responsive styles for sidebar story images */
+  .sidebar-story-content figure {
+    margin: 1rem 0 1.5rem 0;
+  }
+
+  .sidebar-story-content figure img {
+    max-height: 250px;
+  }
+
+  .sidebar-story-content figure figcaption {
+    margin-top: 6px;
+    font-size: 13px;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  .sidebar {
+    padding: 15px; /* Even smaller padding on very small screens */
+    padding-bottom: 60px; /* Increased padding at the bottom for very small screens */
+  }
+
+  .sidebar h2 {
+    font-size: 18px; /* Even smaller heading on very small screens */
+    margin-top: 15px;
+    margin-bottom: 15px;
+  }
+
+  .sidebar p {
+    font-size: 14px; /* Even smaller text on very small screens */
+    line-height: 1.5;
+  }
+
+  .sidebar-story-image {
+    margin: 0 -15px 15px; /* Adjust negative margin for smaller padding */
+    width: calc(100% + 30px); /* Adjust width calculation for smaller padding */
+    max-height: 300px; /* Smaller max height on mobile */
+  }
+
+  .close-sidebar {
+    top: 10px;
+    right: 10px;
+  }
+
+  .sidebar-card-content {
+    padding: 0 15px; /* Smaller padding on very small screens */
+  }
+
+  .sidebar-image {
+    margin: 0 -15px; /* Adjust margins for smaller padding */
+  }
+
+  .sidebar-image img {
+    min-height: 180px; /* Even smaller minimum height on very small screens */
+  }
+
+  .sidebar-content {
+    font-size: 15px; /* Smaller text on very small screens */
+  }
+
+  .sidebar-title {
+    font-size: 20px; /* Even smaller title on very small screens */
+    margin-bottom: 15px;
+  }
+
+  .sidebar-story-category {
+    font-size: 13px; /* Smaller category text on very small screens */
+  }
+
+  .sidebar-story-category:after {
+    width: 120px; /* Even shorter line on very small screens */
+  }
+}

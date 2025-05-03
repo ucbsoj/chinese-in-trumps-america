@@ -1,4 +1,12 @@
 @import url("fonts.css");
+@import url("sidebar.css");
+@import url("footer.css");
+@import url("text-image-layout.css");
+@import url("figcaption-fix.css");
+@import url("charts-container.css");
+@import url("charts-row.css");
+@import url("d3-container.css");
+@import url("carousel.css");
 
 html,
 body {
@@ -212,4 +220,310 @@ section {
     font-size: 0.9rem;
   }
 
-  .ov
+  .overlay-text {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    width: 90vw;
+    max-width: 600px;
+    text-align: center;
+    z-index: 4;
+  }
+}
+
+p {
+  font-size: 16px;
+}
+
+.fast-fade {
+  transition: opacity 0.5s ease-out !important;
+}
+
+/* Adjust figcaption size on tablets */
+@media (max-width: 768px) {
+  .image-caption,
+  figcaption {
+    font-size: 13px;
+    padding: 6px 8px 0;
+    text-align: left;
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  /* Adjust figcaption size on mobile */
+  .image-caption,
+  figcaption {
+    font-size: 12px;
+    padding: 5px 5px 0;
+    line-height: 1.3;
+  }
+}
+
+.full-width-image {
+  width: 100vw;
+  margin-left: calc(-50vw + 50%);
+  margin-right: calc(-50vw + 50%);
+  margin-bottom: 2rem;
+  margin-top: 2rem;
+  position: relative;
+  text-align: center; /* Center the image */
+}
+
+.full-width-image img {
+  width: 100%;
+  height: auto; /* Maintain aspect ratio */
+  max-height: none; /* Remove max-height constraint */
+  object-fit: cover; /* Fill the container while maintaining aspect ratio */
+  display: block;
+}
+
+.hidden {
+  display: none !important;
+  visibility: hidden !important;
+}
+
+/* Responsive styles for full-width-image on tablets */
+@media (max-width: 768px) {
+  .full-width-image figcaption {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    font-style: italic;
+  }
+
+  /* Responsive styles for news app image on tablets */
+  figure.news-app-figure {
+    max-width: 1000px;
+  }
+
+  /* Responsive styles for card on tablets */
+  figure.card {
+    max-width: 600px;
+    gap: 12px;
+  }
+
+  figure.card img {
+    width: calc(50% - 6px); /* Two images side by side with smaller gap */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  /* Responsive styles for full-width-image on mobile */
+  .full-width-image {
+    margin-bottom: 1.5rem;
+    margin-top: 1.5rem;
+  }
+
+  .full-width-image figcaption {
+    padding-left: 1rem;
+    padding-right: 1rem;
+    font-size: 13px;
+  }
+
+  /* Responsive styles for news app image on mobile */
+  figure.news-app-figure {
+    max-width: 350px;
+    margin: 1.5rem auto;
+  }
+
+  figure.news-app-figure figcaption {
+    font-size: 13px;
+    padding: 6px 5px 0;
+    text-align: left;
+  }
+
+  /* Responsive styles for card on mobile */
+  figure.card {
+    max-width: 100%;
+    margin: 1.5rem auto;
+    gap: 10px;
+  }
+
+  figure.card img {
+    width: 100%; /* Full width on mobile */
+    margin-bottom: 10px;
+  }
+
+  figure.card figcaption {
+    font-size: 13px;
+    padding: 6px 5px 0;
+    text-align: left;
+  }
+}
+
+/* Style for the image caption */
+.image-caption,
+figcaption {
+  font-size: 14px;
+  color: #666;
+  text-align: left;
+  padding: 8px 10px 0;
+  line-height: 1.4;
+  font-style: italic;
+  display: block;
+  width: 100%;
+}
+
+/* Special styling for news app image */
+figure.news-app-figure {
+  max-width: 450px;
+  margin: 2rem auto;
+  display: block;
+}
+
+figure.news-app-figure img {
+  width: 100%;
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+/* Card with multiple images in a row */
+figure.card {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+  gap: 15px;
+  width: 100%;
+  max-width: 800px;
+  margin: 2rem auto;
+}
+
+figure.card img {
+  width: calc(50% - 10px); /* Two images side by side with gap */
+  height: auto;
+  object-fit: contain;
+  display: block;
+}
+
+figure.card figcaption {
+  width: 100%;
+  margin-top: 10px;
+  text-align: left;
+}
+
+/* Special styling for full-width-image figcaptions */
+.full-width-image figcaption {
+  text-align: left;
+  max-width: 600px;
+  margin: 0 auto;
+  padding-left: 3rem;
+  padding-right: 3rem;
+  font-style: normal;
+}
+
+/* Italic figcaption style */
+figcaption.italic {
+  font-style: italic !important;
+}
+
+/* Image row for displaying two images side by side */
+.image-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  max-width: 1400px; /* Increased max-width for larger container */
+  margin: 2rem auto; /* Center the container */
+  text-align: center;
+}
+
+.image-row img {
+  width: calc(50% - 10px); /* Calculate width accounting for gap */
+  max-width: 800px; /* Increased max-width for larger images */
+  height: auto;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle; /* Align images vertically */
+}
+
+/* Single caption for the image row */
+.image-row figcaption {
+  margin: 0;
+  text-align: left;
+  width: 100%;
+  max-width: 1400px;
+  font-style: normal;
+  color: #666;
+  font-size: 15px;
+  padding-left: 0 !important; /* Remove left padding to align with edge */
+  flex-basis: 100%; /* Ensures caption takes full width on new line */
+  order: 3; /* Places caption after images */
+}
+
+/* Asymmetric image row for displaying two images with different widths */
+.asymmetric-image-row {
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: flex-start;
+  gap: 15px;
+  width: 100%;
+  max-width: 100%; /* Full width container */
+  margin: 0 auto 1rem auto; /* Reduced margin */
+  text-align: center;
+}
+
+.asymmetric-image-row img.left-image {
+  width: calc(35% - 7.5px); /* Equal to right image minus half the gap */
+  max-width: none; /* Remove max-width constraint */
+  height: auto;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.asymmetric-image-row img.right-image {
+  width: calc(65% - 7.5px); /* Equal to left image minus half the gap */
+  max-width: none; /* Remove max-width constraint */
+  height: auto;
+  object-fit: contain;
+  display: inline-block;
+  vertical-align: middle;
+}
+
+.asymmetric-image-row figcaption {
+  margin: 0.5rem 0 0 0;
+  text-align: left;
+  width: 100%;
+  max-width: 100%;
+  font-style: normal;
+  color: #666;
+  font-size: 15px;
+  padding-left: 0 !important;
+  flex-basis: 100%;
+  order: 3;
+}
+
+/* Responsive design for image row */
+@media (max-width: 768px) {
+  .image-row,
+  .asymmetric-image-row {
+    flex-direction: column;
+    align-items: center;
+    gap: 20px;
+  }
+
+  .image-row img,
+  .asymmetric-image-row img.left-image,
+  .asymmetric-image-row img.right-image {
+    width: 100%;
+    max-width: 100%;
+    margin-bottom: 0;
+  }
+
+  .image-row figcaption,
+  .asymmetric-image-row figcaption {
+    margin-top: 10px;
+    font-size: 14px;
+    text-align: left;
+  }
+}

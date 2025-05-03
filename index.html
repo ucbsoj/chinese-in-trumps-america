@@ -11,12 +11,13 @@
     <link rel="stylesheet" href="styles/charts-container.css" />
     <link rel="stylesheet" href="styles/charts-row.css" />
     <link rel="stylesheet" href="styles/carousel.css" />
+    <link rel="stylesheet" href="styles/footer.css" />
+    <link rel="stylesheet" href="styles/sidebar.css" />
     <link rel="icon" type="image/x-icon" href="assets/logo.jpg" />
     <script src="https://api.tiles.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.js"></script>
     <link href="https://api.tiles.mapbox.com/mapbox-gl-js/v3.8.0/mapbox-gl.css" rel="stylesheet" />
     <script src="https://cdn.jsdelivr.net/npm/mapbox-gl-globe-minimap@1.2.0/dist/bundle.js"></script>
     <script src="https://unpkg.com/scrollama"></script>
-    "
     <style>
       #scroll-container {
         margin: 0;
@@ -81,8 +82,10 @@
         padding-bottom: 10vh;
       }
 
+      /* General hidden class for elements that should be completely hidden */
       .hidden {
-        visibility: hidden;
+        display: none !important;
+        visibility: hidden !important;
       }
 
       .centered {
@@ -422,13 +425,22 @@
               <div class="charts-container">
                 <div class="chart-item">
                   <img src="assets/GDP.png" alt="GDP change in China" />
-                  <p>After years of steady decline, China's GDP growth rate dropped to 2.3% in 2020</p>
+                  <p>
+                    After years of steady decline, China's GDP growth rate dropped to 2.3% in 2020
+                  </p>
                 </div>
                 <div class="chart-item">
-                  <img src="assets/consumer-confidence.png" alt="consumer confidency change in China" />
-                  <p>After years of strong confidence, Chinese people's willingness to spend collapsed during COVID</p>
+                  <img
+                    src="assets/consumer-confidence.png"
+                    alt="consumer confidency change in China"
+                  />
+                  <p>
+                    After years of strong confidence, Chinese people's willingness to spend
+                    collapsed during COVID
+                  </p>
                 </div>
-              </div>              <p>
+              </div>
+              <p>
                 Chen’s business began to falter. He found himself thinking back to his youth — his
                 early interest in English, his dreams of working in international trade, and maybe
                 one day going abroad.
@@ -496,7 +508,7 @@
         >
           <div class="sidebar" onclick="event.stopPropagation();">
             <button class="close-sidebar" onclick="closeSidebar()">×</button>
-            <div class="sidebar-story-category">
+            <div class="sidebar-story-category" style="text-align: center">
               Stories of the Collapsed Chinese Middle Class Dream
             </div>
             <h2 class="sidebar-title">When the Hospital Closed Its Doors</h2>
@@ -642,31 +654,28 @@
         </div>
 
         <div class="story-body">
-            <div class="immigration-part">
-              <p>
-                Some tried to schedule asylum appointments through the U.S. Customs and Border
-                Protection mobile app, CBP One. But the app had no Chinese-language interface and
-                its opaque scheduling system left many confused and frustrated. For some, waiting
-                wasn't an option. They chose instead to scale the border wall at night and apply for
-                asylum afterward.
-              </p>
-              <div class="text-image-layout">
-                <div class="text-content">
-                  <p>
-                    Once they reached the U.S., migrants were immediately detained by immigration
-                    authorities — some held for a single day, others for weeks or even months.
-                  </p>
+          <div class="immigration-part">
+            <p>
+              Some tried to schedule asylum appointments through the U.S. Customs and Border
+              Protection mobile app, CBP One. But the app had no Chinese-language interface and its
+              opaque scheduling system left many confused and frustrated. For some, waiting wasn't
+              an option. They chose instead to scale the border wall at night and apply for asylum
+              afterward.
+            </p>
+                <p>
+                  Once they reached the U.S., migrants were immediately detained by immigration
+                  authorities — some held for a single day, others for weeks or even months.
+                </p>
 
-                  <p>
-                    Their asylum cases can take years to process, and during that time, they are not
-                    permitted to leave the country.
-                  </p>
-                </div>
-                <div class="image-content">
-                  <img src="assets/process-chart.png" alt="Asylum application process chart" />
-                </div>
+                <p>
+                  Their asylum cases can take years to process, and during that time, they are not
+                  permitted to leave the country.
+                </p>
+              <div class="image-content">
+                <img src="assets/process-chart.png" alt="Asylum application process chart" />
               </div>
-            </div>           
+
+          </div>
           <div>
             <section class="us-part">
               <h2>American Dream from the Bottom</h2>
@@ -691,7 +700,6 @@
                 China, now, he is on the road six days a week, working ten hours or more each day
                 with barely any time to rest.
               </p>
-       
 
               <figure class="full-width-image">
                 <img
@@ -701,7 +709,6 @@
                 <figcaption class="italic">Jiang sets out for work before dawn.</figcaption>
               </figure>
 
-        
               <p>
                 Before the sun rose, Jiang was already en route to his first stop: the warehouse.
               </p>
@@ -827,415 +834,420 @@
               <p>Back in China, Jiang had a degree, a stable job, and professional respect.</p>
 
               <p>Here, all of that was erased.</p>
-          
-          </section>
+            </section>
 
-          <div class="sidebar-card-wrapper">
-            <div class="sidebar-card-content">
-              <div class="sidebar-story-category">
-                Stories of the Collapsed Chinese Middle Class Dream
+            <div class="sidebar-card-wrapper">
+              <div class="sidebar-card-content">
+                <div class="sidebar-story-category">
+                  Stories of the Collapsed Chinese Middle Class Dream
+                </div>
+                <h2 class="sidebar-title">From Manager to Noodle Shop Worker</h2>
+                <div class="sidebar-card-row">
+                  <div class="sidebar-content">
+                    <p>
+                      Before crossing the border, Leo was a mid-level manager at a state-owned
+                      enterprise in Shenzhen. He earned 50,000 yuan a month (around $7,000), had his
+                      own office, generous benefits, and a clear promotion path. To most people, he
+                      had a job for life.
+                    </p>
+                    <p>However, Leo felt he was slowly suffocating.</p>
+                    <p>
+                      Over two years at the SOE, he had frequent contact with private contractors.
+                      Hoping to secure deals, many of them offered small gifts as a way to build
+                      relationships. What began as informal gestures and networking gradually turned
+                      into open corruption, with bribes and kickbacks exchanged without pretense.
+                      Inside the company, things weren’t much better. ...
+                    </p>
+                  </div>
+                  <div class="sidebar-image">
+                    <img src="assets/leo-back.jpg" alt="Leo working at noodle shop" />
+                  </div>
+                </div>
+                <div class="sidebar-button">
+                  <button class="open-sidebar" onclick="openSidebar('noodle')">
+                    Open Story on this Page
+                  </button>
+                </div>
               </div>
-              <h2 class="sidebar-title">From Manager to Noodle Shop Worker</h2>
-              <div class="sidebar-card-row">
-                <div class="sidebar-content">
+            </div>
+
+            <div
+              class="sidebar-overlay hidden"
+              data-story="noodle"
+              style="cursor: default"
+              onclick="if(event.target === this) { closeSidebar(); }"
+            >
+              <div class="sidebar" onclick="event.stopPropagation();">
+                <button class="close-sidebar" onclick="closeSidebar()">×</button>
+                <div class="sidebar-story-category">
+                  Stories of the Collapsed Chinese Middle Class Dream
+                </div>
+                <h2 class="sidebar-title">From Manager to Noodle Shop Worker</h2>
+                <figure class="sidebar-story-image">
+                  <img src="assets/leo-back.jpg" alt="Leo working at noodle shop" />
+                  <figcaption
+                    class="image-caption"
+                    style="margin-bottom: 30px; padding-bottom: 10px; display: block; clear: both"
+                  >
+                    Leo works at a noodle shop in Monterey Park, Los Angeles.
+                  </figcaption>
+                </figure>
+                <div
+                  class="sidebar-story-content"
+                  style="margin-top: 20px; position: relative; z-index: 0"
+                >
+                  <p>For Leo, the decision to leave China had more to do with the system itself.</p>
+
                   <p>
                     Before crossing the border, Leo was a mid-level manager at a state-owned
-                    enterprise in Shenzhen. He earned 50,000 yuan a month (around $7,000), had his
-                    own office, generous benefits, and a clear promotion path. To most people, he
-                    had a job for life.
+                    enterprise (SOE) in Shenzhen. He earned 50,000 yuan a month (around $7,000), had
+                    his own office, generous benefits, and a clear promotion path. To most people,
+                    he had a job for life.
                   </p>
+
                   <p>However, Leo felt he was slowly suffocating.</p>
+
                   <p>
                     Over two years at the SOE, he had frequent contact with private contractors.
                     Hoping to secure deals, many of them offered small gifts as a way to build
                     relationships. What began as informal gestures and networking gradually turned
                     into open corruption, with bribes and kickbacks exchanged without pretense.
-                    Inside the company, things weren’t much better. ...
+                    Inside the company, things weren’t much better. Employees were expected to work
+                    overtime, and managers routinely berated subordinates in front of their peers.
+                  </p>
+
+                  <p>Leo saw no way to change it.</p>
+
+                  <p>
+                    To cope, he began climbing China’s digital firewall to read foreign news. What
+                    he found shocked him—accounts of political events that were censored at home:
+                    the Tiananmen crackdown, the 2022 “white paper” protests, and more.
+                  </p>
+
+                  <p>“It opened my brain,” he said. “I realized what China really was.”</p>
+
+                  <p>
+                    In late 2023, Leo quit his job. He packed a backpack and set off to “see the
+                    world.” His journey took him through Europe, Egypt, and Mexico—before finally
+                    reaching the United States.
+                  </p>
+
+                  <p>
+                    Like many newly arrived Chinese migrants, when first landing in the U.S., Leo
+                    headed straight to Monterey Park, a city east of downtown Los Angeles.
+                  </p>
+
+                  <figure>
+                    <img src="assets/monterey-park.png" alt="Map of Monterey Park" />
+                    <figcaption>
+                      A map showing the location of Monterey Park to downtown Los Angeles
+                    </figcaption>
+                  </figure>
+
+                  <p>
+                    Monterey Park holds a unique place in U.S. history: It was the first city where
+                    Asian Americans became the majority population. According to ACS 2023 data, 64%
+                    of residents in Monterey Park are Asian, more than double the rate in
+                    California.
+                  </p>
+
+                  <p>
+                    Street signs are bilingual, storefronts are covered in simplified Chinese
+                    characters. Mandarin, Cantonese, and Hokkien echo through the air, with English
+                    heard only occasionally.
+                  </p>
+
+                  <figure>
+                    <img src="assets/fatty-ding-plaza.jpg" alt="Stores in Fatty Ding Plaza" />
+                    <figcaption>
+                      Stores with Chinese-language signs in Fatty Ding Plaza, a shopping center
+                      serving the local Chinese community in Monterey Park
+                    </figcaption>
+                  </figure>
+                  <p>
+                    For Leo, Monterey Park wasn’t just a temporary refuge. It was a transitional
+                    space between two worlds. It was America, but also a different version of China.
+                  </p>
+
+                  <p>
+                    Though he lived in a place that felt familiar, Leo didn’t feel at home. The
+                    early months in the U.S., he said, were the darkest period of his life.
+                  </p>
+
+                  <p>
+                    Within two weeks of landing in the U.S., Leo’s 5-year long-term relationship
+                    ended. His family urged him to return. Old colleagues drifted away.
+                  </p>
+
+                  <p>
+                    Each morning, he woke to a rising wave of emptiness. On the worst days, he would
+                    lie in bed crying for an hour before he could bring himself to stand.
+                  </p>
+
+                  <p>
+                    To cope, he began taking sleeping pills. For a time, Leo couldn’t even bring
+                    himself to look for work. He lived off his savings, unable to move forward.
+                  </p>
+
+                  <p>He wasn’t alone.</p>
+
+                  <p>
+                    At the time, he was staying with a fellow new immigrant whom he had met online.
+                    That friend confided that he, too, had spiraled into depression, plagued by
+                    homesickness and isolation. The man had seriously considered returning to China,
+                    but ultimately said: “I’ve come this far. I have to hold on.”
+                  </p>
+
+                  <p>Nearly three months passed like this—adrift, unemployed, and alone.</p>
+
+                  <p>
+                    One day, Leo walked into a popular noodle shop tucked in Monterey Park. As it
+                    happened, they were short-staffed. Leo then landed his first job in the U.S.
+                  </p>
+
+                  <p>
+                    He stood behind the cashier counter, slightly hunched, dark circles under his
+                    eyes, stubble dusting his chin. His hands folded neatly in front of him, smiling
+                    politely at each customer who walked in.
+                  </p>
+
+                  <p>
+                    Once a deputy manager at a state-owned enterprise in Shenzhen, earning over
+                    50,000 yuan a month, he now served steaming bowls of hand-pulled noodles to
+                    strangers.
+                  </p>
+
+                  <figure>
+                    <img
+                      src="assets/leo-cleaning.jpg"
+                      alt="Leo cleans tables at a noodle shop where he works"
+                    />
+                    <figcaption>Leo cleans tables at a noodle shop where he works</figcaption>
+                  </figure>
+
+                  <p>
+                    When he wasn’t working, Leo chose to spend most of his time alone. Sometimes,
+                    while grocery shopping, he couldn’t help but think of the time he’d spent with
+                    his ex-girlfriend, his family, and his friends.
+                  </p>
+
+                  <p>
+                    He knew those days were gone. Though he had made some new friends, everyone was
+                    focused on survival.
+                  </p>
+
+                  <p>
+                    “Back home, when something went wrong, I had family and friends to lean on. Now,
+                    I face everything alone.”
                   </p>
                 </div>
-                <div class="sidebar-image">
-                  <img src="assets/leo-back.jpg" alt="Leo working at noodle shop" />
-                </div>
-              </div>
-              <div class="sidebar-button">
-                <button class="open-sidebar" onclick="openSidebar('noodle')">
-                  Open Story on this Page
-                </button>
+                <div class="sidebar-spacer"></div>
               </div>
             </div>
           </div>
-
-          <div
-            class="sidebar-overlay hidden"
-            data-story="noodle"
-            style="cursor: default"
-            onclick="if(event.target === this) { closeSidebar(); }"
-          >
-            <div class="sidebar" onclick="event.stopPropagation();">
-              <button class="close-sidebar" onclick="closeSidebar()">×</button>
-              <div class="sidebar-story-category">
-                Stories of the Collapsed Chinese Middle Class Dream
-              </div>
-              <h2 class="sidebar-title">From Manager to Noodle Shop Worker</h2>
-              <figure class="sidebar-story-image">
-                <img src="assets/leo-back.jpg" alt="Leo working at noodle shop" />
-                <figcaption
-                  class="image-caption"
-                  style="margin-bottom: 30px; padding-bottom: 10px; display: block; clear: both"
-                >
-                  Leo works at a noodle shop in Monterey Park, Los Angeles.
-                </figcaption>
-              </figure>
-              <div
-                class="sidebar-story-content"
-                style="margin-top: 20px; position: relative; z-index: 0"
-              >
-                <p>For Leo, the decision to leave China had more to do with the system itself.</p>
-
-                <p>
-                  Before crossing the border, Leo was a mid-level manager at a state-owned
-                  enterprise (SOE) in Shenzhen. He earned 50,000 yuan a month (around $7,000), had
-                  his own office, generous benefits, and a clear promotion path. To most people, he
-                  had a job for life.
-                </p>
-
-                <p>However, Leo felt he was slowly suffocating.</p>
-
-                <p>
-                  Over two years at the SOE, he had frequent contact with private contractors.
-                  Hoping to secure deals, many of them offered small gifts as a way to build
-                  relationships. What began as informal gestures and networking gradually turned
-                  into open corruption, with bribes and kickbacks exchanged without pretense. Inside
-                  the company, things weren’t much better. Employees were expected to work overtime,
-                  and managers routinely berated subordinates in front of their peers.
-                </p>
-
-                <p>Leo saw no way to change it.</p>
-
-                <p>
-                  To cope, he began climbing China’s digital firewall to read foreign news. What he
-                  found shocked him—accounts of political events that were censored at home: the
-                  Tiananmen crackdown, the 2022 “white paper” protests, and more.
-                </p>
-
-                <p>“It opened my brain,” he said. “I realized what China really was.”</p>
-
-                <p>
-                  In late 2023, Leo quit his job. He packed a backpack and set off to “see the
-                  world.” His journey took him through Europe, Egypt, and Mexico—before finally
-                  reaching the United States.
-                </p>
-
-                <p>
-                  Like many newly arrived Chinese migrants, when first landing in the U.S., Leo
-                  headed straight to Monterey Park, a city east of downtown Los Angeles.
-                </p>
-
-                <figure>
-                  <img src="assets/monterey-park.png" alt="Map of Monterey Park" />
-                  <figcaption>
-                    A map showing the location of Monterey Park to downtown Los Angeles
-                  </figcaption>
-                </figure>
-
-                <p>
-                  Monterey Park holds a unique place in U.S. history: It was the first city where
-                  Asian Americans became the majority population. According to ACS 2023 data, 64% of
-                  residents in Monterey Park are Asian, more than double the rate in California.
-                </p>
-
-                <p>
-                  Street signs are bilingual, storefronts are covered in simplified Chinese
-                  characters. Mandarin, Cantonese, and Hokkien echo through the air, with English
-                  heard only occasionally.
-                </p>
-
-                <figure>
-                  <img src="assets/fatty-ding-plaza.jpg" alt="Stores in Fatty Ding Plaza" />
-                  <figcaption>
-                    Stores with Chinese-language signs in Fatty Ding Plaza, a shopping center
-                    serving the local Chinese community in Monterey Park
-                  </figcaption>
-                </figure>
-                <p>
-                  For Leo, Monterey Park wasn’t just a temporary refuge. It was a transitional space
-                  between two worlds. It was America, but also a different version of China.
-                </p>
-
-                <p>
-                  Though he lived in a place that felt familiar, Leo didn’t feel at home. The early
-                  months in the U.S., he said, were the darkest period of his life.
-                </p>
-
-                <p>
-                  Within two weeks of landing in the U.S., Leo’s 5-year long-term relationship
-                  ended. His family urged him to return. Old colleagues drifted away.
-                </p>
-
-                <p>
-                  Each morning, he woke to a rising wave of emptiness. On the worst days, he would
-                  lie in bed crying for an hour before he could bring himself to stand.
-                </p>
-
-                <p>
-                  To cope, he began taking sleeping pills. For a time, Leo couldn’t even bring
-                  himself to look for work. He lived off his savings, unable to move forward.
-                </p>
-
-                <p>He wasn’t alone.</p>
-
-                <p>
-                  At the time, he was staying with a fellow new immigrant whom he had met online.
-                  That friend confided that he, too, had spiraled into depression, plagued by
-                  homesickness and isolation. The man had seriously considered returning to China,
-                  but ultimately said: “I’ve come this far. I have to hold on.”
-                </p>
-
-                <p>Nearly three months passed like this—adrift, unemployed, and alone.</p>
-
-                <p>
-                  One day, Leo walked into a popular noodle shop tucked in Monterey Park. As it
-                  happened, they were short-staffed. Leo then landed his first job in the U.S.
-                </p>
-
-                <p>
-                  He stood behind the cashier counter, slightly hunched, dark circles under his
-                  eyes, stubble dusting his chin. His hands folded neatly in front of him, smiling
-                  politely at each customer who walked in.
-                </p>
-
-                <p>
-                  Once a deputy manager at a state-owned enterprise in Shenzhen, earning over 50,000
-                  yuan a month, he now served steaming bowls of hand-pulled noodles to strangers.
-                </p>
-
-                <figure>
-                  <img
-                    src="assets/leo-cleaning.jpg"
-                    alt="Leo cleans tables at a noodle shop where he works"
-                  />
-                  <figcaption>Leo cleans tables at a noodle shop where he works</figcaption>
-                </figure>
-
-                <p>
-                  When he wasn’t working, Leo chose to spend most of his time alone. Sometimes,
-                  while grocery shopping, he couldn’t help but think of the time he’d spent with his
-                  ex-girlfriend, his family, and his friends.
-                </p>
-
-                <p>
-                  He knew those days were gone. Though he had made some new friends, everyone was
-                  focused on survival.
-                </p>
-
-                <p>
-                  “Back home, when something went wrong, I had family and friends to lean on. Now, I
-                  face everything alone.”
-                </p>
-              </div>
-              <div class="sidebar-spacer"></div>
-            </div>
-          </div>
-        </div>
 
           <div class="story-body">
-          <section>
-            <div class="deportation-part">
-              <h2>Shadow of Deportation</h2>
-              <p>
-                Rebuilding a life in a foreign land is never easy. For undocumented immigrants, the
-                constant threat of deportation makes it even harder.
-              </p>
+            <section>
+              <div class="deportation-part">
+                <h2>Shadow of Deportation</h2>
+                <p>
+                  Rebuilding a life in a foreign land is never easy. For undocumented immigrants,
+                  the constant threat of deportation makes it even harder.
+                </p>
 
-              <p>
-                After returning to the White House, Donald Trump announced what he called “the
-                largest deportation operation in U.S. history,” pledging to remove millions of
-                undocumented immigrants within his first year back in office.
-              </p>
+                <p>
+                  After returning to the White House, Donald Trump announced what he called “the
+                  largest deportation operation in U.S. history,” pledging to remove millions of
+                  undocumented immigrants within his first year back in office.
+                </p>
 
-              <p>
-                Reports of Immigration and Customs Enforcement (ICE) raids began surfacing across
-                the country, including some cases involving people with valid visas.
-              </p>
+                <p>
+                  Reports of Immigration and Customs Enforcement (ICE) raids began surfacing across
+                  the country, including some cases involving people with valid visas.
+                </p>
 
-              <p>
-                According to the Department of Homeland Security, more than 32,000 undocumented
-                immigrants were arrested by ICE within the first 50 days of Trump’s return to
-                office.
-              </p>
+                <p>
+                  According to the Department of Homeland Security, more than 32,000 undocumented
+                  immigrants were arrested by ICE within the first 50 days of Trump’s return to
+                  office.
+                </p>
 
-              <p>
-                In his spare time, Leo often browsed the LA Chinese News app. Stories or rumors of
-                ICE activity appeared almost daily. The anxiety wore on him.
-              </p>
+                <p>
+                  In his spare time, Leo often browsed the LA Chinese News app. Stories or rumors of
+                  ICE activity appeared almost daily. The anxiety wore on him.
+                </p>
 
-              <figure class="news-app-figure">
-                <img src="assets/news-app.jpg" alt="Screenshot of LA Chinese News app" />
-                <figcaption class="image-caption">
-                  News of ICE detaining undocumented immigrants appears on Leo’s Chinese-language
-                  news app.
-                </figcaption>
-              </figure>
+                <figure class="news-app-figure">
+                  <img src="assets/news-app.jpg" alt="Screenshot of LA Chinese News app" />
+                  <figcaption class="image-caption">
+                    News of ICE detaining undocumented immigrants appears on Leo’s Chinese-language
+                    news app.
+                  </figcaption>
+                </figure>
 
-              <p>
-                He even hesitated to buy a car, fearing that if he were suddenly deported, there
-                would be no way to deal with the property he left behind.
-              </p>
+                <p>
+                  He even hesitated to buy a car, fearing that if he were suddenly deported, there
+                  would be no way to deal with the property he left behind.
+                </p>
 
-              <p>
-                Leo said the number of new Chinese migrants had clearly declined this year. Regular
-                customers who used to frequent the noodle shop had dropped by a third. The
-                restaurant’s revenue plummeted. Staff were cut by a quarter. His monthly income
-                shrank from $6,000 to $4,000.
-              </p>
+                <p>
+                  Leo said the number of new Chinese migrants had clearly declined this year.
+                  Regular customers who used to frequent the noodle shop had dropped by a third. The
+                  restaurant’s revenue plummeted. Staff were cut by a quarter. His monthly income
+                  shrank from $6,000 to $4,000.
+                </p>
 
-              <p>
-                At the entrance to the Fatty Ding Plaza, a Cantonese restaurant called ABC Cafe,
-                open for 38 years, saw the same trend. The owner, Mr. Huang, said the place had long
-                served immigrants who had just arrived in the U.S., but that clientele had all but
-                vanished.
-              </p>
+                <p>
+                  At the entrance to the Fatty Ding Plaza, a Cantonese restaurant called ABC Cafe,
+                  open for 38 years, saw the same trend. The owner, Mr. Huang, said the place had
+                  long served immigrants who had just arrived in the U.S., but that clientele had
+                  all but vanished.
+                </p>
 
-              <p>Business dropped by 10%.</p>
+                <p>Business dropped by 10%.</p>
 
-              <p>
-                In Monterey Park, some lawyers and NGOs distribute guides for immigrants on how to
-                protect their legal rights if confronted by ICE.
-              </p>
+                <p>
+                  In Monterey Park, some lawyers and NGOs distribute guides for immigrants on how to
+                  protect their legal rights if confronted by ICE.
+                </p>
 
-              <figure class="card">
-                <img src="assets/card.jpg" alt="Screenshot of LA Chinese News app" />
-                <img
-                  src="assets/card-translate.png"
-                  alt="Trasnlation of the Screenshot of LA Chinese News app"
-                />
-                <figcaption class="image-caption">
-                  A card distributed by lawyers and NGOs to help immigrants assert their rights during encounters with ICE.
-                </figcaption>
-              </figure>
+                <figure class="card">
+                  <img src="assets/card.jpg" alt="Screenshot of LA Chinese News app" />
+                  <img
+                    src="assets/card-translate.png"
+                    alt="Trasnlation of the Screenshot of LA Chinese News app"
+                  />
+                  <figcaption class="image-caption">
+                    A card distributed by lawyers and NGOs to help immigrants assert their rights
+                    during encounters with ICE.
+                  </figcaption>
+                </figure>
 
-              <p>
-                Despite the unsettling rumors, Jiang said he was not overly concerned. His lawyer
-                told him that the highest-risk individuals were those with final removal orders or
-                past convictions and as someone still in the asylum system, Jiang was unlikely to be
-                targeted. He added that he believes in the U.S. legal system, even amid Trump’s
-                immigration crackdown and shifting policies.
-              </p>
-            </div>
-          </section>
-          <section>
-            <div class="future-part">
-              <h2>Uncertain Future</h2>
-              <p>February marked Leo’s first Lunar New Year in America.</p>
+                <p>
+                  Despite the unsettling rumors, Jiang said he was not overly concerned. His lawyer
+                  told him that the highest-risk individuals were those with final removal orders or
+                  past convictions and as someone still in the asylum system, Jiang was unlikely to
+                  be targeted. He added that he believes in the U.S. legal system, even amid Trump’s
+                  immigration crackdown and shifting policies.
+                </p>
+              </div>
+            </section>
+            <section>
+              <div class="future-part">
+                <h2>Uncertain Future</h2>
+                <p>February marked Leo’s first Lunar New Year in America.</p>
 
-              <p>
-                For millions of Chinese people, the Spring Festival is the most joyous time of the
-                year. It is a time for family reunions, long dinners, and crowded living rooms.
-              </p>
+                <p>
+                  For millions of Chinese people, the Spring Festival is the most joyous time of the
+                  year. It is a time for family reunions, long dinners, and crowded living rooms.
+                </p>
 
-              <p>But for Leo, it was just another day.</p>
+                <p>But for Leo, it was just another day.</p>
 
-              <p>
-                There were no relatives to visit, no feast to prepare. He ate a simple meal with a
-                few coworkers in the restaurant where he worked.
-              </p>
+                <p>
+                  There were no relatives to visit, no feast to prepare. He ate a simple meal with a
+                  few coworkers in the restaurant where he worked.
+                </p>
 
-              <p>
-                Unsettling immigration policy and repetitive work at the noodle shop made Leo
-                couldn’t see a clear future.
-              </p>
+                <p>
+                  Unsettling immigration policy and repetitive work at the noodle shop made Leo
+                  couldn’t see a clear future.
+                </p>
 
-              <p>
-                When asked whether he regretted leaving behind a stable job, a secure life, and
-                financial comfort in China, Leo fell silent.
-              </p>
+                <p>
+                  When asked whether he regretted leaving behind a stable job, a secure life, and
+                  financial comfort in China, Leo fell silent.
+                </p>
 
-              <p>After a long pause, he sighed:</p>
+                <p>After a long pause, he sighed:</p>
 
-              <p>“At this stage? It doesn’t feel worth it. I gave up too much.”</p>
+                <p>“At this stage? It doesn’t feel worth it. I gave up too much.”</p>
 
-              <p>
-                And yet, Leo said he was content. He got along well with his coworkers and his boss.
-                Here, he didn’t have to flatter superiors or navigate office politics and
-                corruption. The simplicity lightened something inside him.
-              </p>
+                <p>
+                  And yet, Leo said he was content. He got along well with his coworkers and his
+                  boss. Here, he didn’t have to flatter superiors or navigate office politics and
+                  corruption. The simplicity lightened something inside him.
+                </p>
 
-              <p>
-                “This is just a transition,” he said. “Once I come out of the depression, I know I
-                can do more. I believe in myself. And I believe in this country.”
-              </p>
+                <p>
+                  “This is just a transition,” he said. “Once I come out of the depression, I know I
+                  can do more. I believe in myself. And I believe in this country.”
+                </p>
 
-              <p>
-                Now and then, he allowed himself small pleasures. He loved electronic music
-                festivals, something he had rarely experienced in China. Since moving to Los
-                Angeles, he had already attended two. He described the energy, the openness, the
-                crowd.
-              </p>
+                <p>
+                  Now and then, he allowed himself small pleasures. He loved electronic music
+                  festivals, something he had rarely experienced in China. Since moving to Los
+                  Angeles, he had already attended two. He described the energy, the openness, the
+                  crowd.
+                </p>
 
-              <p>“One day,” he said, “my future self will thank me for what I’m doing now.”</p>
+                <p>“One day,” he said, “my future self will thank me for what I’m doing now.”</p>
 
-              <p>Since arriving in the U.S., Leo’s version of the American dream wasn’t grand.</p>
+                <p>Since arriving in the U.S., Leo’s version of the American dream wasn’t grand.</p>
 
-              <p>
-                “I just want to live a little more comfortably,” he said. “To save a bit, maybe
-                travel now and then. One day, if I’m lucky, buy a home and settle down.”
-              </p>
+                <p>
+                  “I just want to live a little more comfortably,” he said. “To save a bit, maybe
+                  travel now and then. One day, if I’m lucky, buy a home and settle down.”
+                </p>
 
-              <p>Meanwhile, Jiang and his family were also learning to adapt.</p>
+                <p>Meanwhile, Jiang and his family were also learning to adapt.</p>
 
-              <p>
-                His delivery job had little in the way of prospects. Still, he decided to stick with
-                it. He didn’t dwell on what might come next. For now, making ends meet was enough.
-              </p>
+                <p>
+                  His delivery job had little in the way of prospects. Still, he decided to stick
+                  with it. He didn’t dwell on what might come next. For now, making ends meet was
+                  enough.
+                </p>
 
-              <p>
-                What mattered most wasn’t money or comfort, but setting an example for his children,
-                showing them that life wasn’t just about taking, it was also about contributing.
-              </p>
+                <p>
+                  What mattered most wasn’t money or comfort, but setting an example for his
+                  children, showing them that life wasn’t just about taking, it was also about
+                  contributing.
+                </p>
 
-              <p>
-                To Jiang, giving was as important as receiving. He had one day off per week. Instead
-                of resting, he volunteered at a food bank in Montebello, handing out free meals to
-                families in need.
-              </p>
+                <p>
+                  To Jiang, giving was as important as receiving. He had one day off per week.
+                  Instead of resting, he volunteered at a food bank in Montebello, handing out free
+                  meals to families in need.
+                </p>
 
-              <p>
-                In his eyes, the American dream was already half-fulfilled once he landed in this
-                new country.
-              </p>
+                <p>
+                  In his eyes, the American dream was already half-fulfilled once he landed in this
+                  new country.
+                </p>
 
-              <p>“Becoming an American is my ultimate goal,” he said, without hesitation.</p>
+                <p>“Becoming an American is my ultimate goal,” he said, without hesitation.</p>
 
-              <figure class="full-width-image">
-                <img
-                  src="assets/Jiang-us-flag-0.jpg"
-                  alt="While making deliveries, Jiang pauses outside a home flying the American flag"
-                />
-                <figcaption>
-                  While making deliveries, Jiang pauses outside a home flying the American flag.
-                </figcaption>
-              </figure>
+                <figure class="full-width-image">
+                  <img
+                    src="assets/Jiang-us-flag-0.jpg"
+                    alt="While making deliveries, Jiang pauses outside a home flying the American flag"
+                  />
+                  <figcaption>
+                    While making deliveries, Jiang pauses outside a home flying the American flag.
+                  </figcaption>
+                </figure>
 
-              <p>
-                Near midnight, after a long day, Jiang washed up and slipped into bed. This is the
-                only moment of the day that truly belongs to him. In the darkness, the last thing he
-                did was set his alarm for 5 a.m. the next morning.
-              </p>
+                <p>
+                  Near midnight, after a long day, Jiang washed up and slipped into bed. This is the
+                  only moment of the day that truly belongs to him. In the darkness, the last thing
+                  he did was set his alarm for 5 a.m. the next morning.
+                </p>
 
-              <p>
-                Meanwhile, Leo turned off the lights at the noodle shop and caught the No. 70 bus
-                back to the room he shared with others. Zhang was still hustling through the streets
-                of Hollywood, delivering late-night orders. Chen returned to his company, lay down
-                on a folding bed, and began mapping out the next day’s delivery routes.
-              </p>
+                <p>
+                  Meanwhile, Leo turned off the lights at the noodle shop and caught the No. 70 bus
+                  back to the room he shared with others. Zhang was still hustling through the
+                  streets of Hollywood, delivering late-night orders. Chen returned to his company,
+                  lay down on a folding bed, and began mapping out the next day’s delivery routes.
+                </p>
 
-              <p>The city was quiet.</p>
+                <p>The city was quiet.</p>
 
-              <p>In a few hours, as the sun rose again, they would all be back on the road.</p>
-            </div>
-          </section>
+                <p>In a few hours, as the sun rose again, they would all be back on the road.</p>
+              </div>
+            </section>
           </div>
-        
+        </div>
+      </div>
     </main>
     <footer>
       <div class="footer-top">
@@ -2251,7 +2263,9 @@
       });
     </script>
 
-    <script src="script.js"></script>
+    <script src="scripts/progress-bar.js"></script>
+    <script src="scripts/carousel.js"></script>
+    <script src="scripts/d3.js"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script>
     <script>
       skrollr.init();
@@ -2285,7 +2299,10 @@
         // Then add show class to trigger transition
         setTimeout(() => {
           overlay.classList.add("show");
-          sidebar.scrollTop = 0;
+          if (sidebar) {
+            sidebar.style.transform = "translateX(0)";
+            sidebar.scrollTop = 0;
+          }
           document.body.style.overflow = "hidden";
         }, 10);
       }
@@ -2294,6 +2311,11 @@
       function closeSidebar() {
         var visibleOverlay = document.querySelector(".sidebar-overlay.show");
         if (!visibleOverlay) return;
+
+        var sidebar = visibleOverlay.querySelector(".sidebar");
+        if (sidebar) {
+          sidebar.style.transform = "translateX(100%)";
+        }
 
         // First remove show class to trigger transition
         visibleOverlay.classList.remove("show");
@@ -2307,4 +2329,3 @@
     </script>
   </body>
 </html>
-                                                                                                                   
