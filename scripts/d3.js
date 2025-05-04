@@ -69,7 +69,7 @@ async function draw() {
   // 设置条形宽度为x轴范围的1/2或其他适合的宽度
   const barWidth = (dimensions.ctrWidth / dataset.length) * 0.8;
 
-  // Create bars with staggered animation
+  // Create bars with normal pop-up animation
   ctr
     .selectAll("rect")
     .data(dataset)
@@ -83,9 +83,9 @@ async function draw() {
     .attr("stroke", "black") // 边框颜色
     .attr("stroke-width", 1) // 边框宽度
     .transition() // 开始过渡动画
-    .duration(1200) // 动画持续时间
-    .delay((d, i) => i * 25) // 添加延迟，使每个条形依次出现
-    .ease(d3.easeElastic.amplitude(0.5)) // 使用弹性缓动效果
+    .duration(800) // 动画持续时间 - shorter for pop-up effect
+    .delay((d, i) => i * 10) // 减少延迟时间，让所有条形几乎同时出现
+    .ease(d3.easeCubicOut) // 使用简单的缓动效果，没有弹性
     .attr("y", (d) => yScale(yAccessor(d))) // 目标位置
     .attr("height", (d) => dimensions.ctrHeight - yScale(yAccessor(d))); // 目标高度
 

@@ -43,22 +43,23 @@ footer p {
   padding: 0.5rem 1rem;
   cursor: pointer;
   font-size: 14px;
-  transition: background-color 0.2s, transform 0.2s;
+  transition: opacity 0.2s;
 }
 
 .back-to-top:hover {
   opacity: 0.8;
-  transform: translateY(-2px);
 }
 
 .back-to-top:active {
-  transform: translateY(1px);
+  opacity: 1;
 }
 
 /* Responsive styles */
 @media (max-width: 768px) {
   footer {
     padding: 20px 15px;
+    position: relative;
+    padding-bottom: 80px; /* Add extra padding at the bottom for the button */
   }
 
   .footer-top {
@@ -72,5 +73,36 @@ footer p {
 
   footer p {
     font-size: 13px;
+    margin-bottom: 20px;
+  }
+
+  .back-to-top {
+    position: absolute;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: auto; /* 改为自适应宽度 */
+    padding: 10px 20px; /* 使用固定内边距 */
+    font-size: 14px;
+    font-weight: normal;
+  }
+
+  /* 确保移动设备上的悬停效果不会导致按钮移动 */
+  .back-to-top:hover {
+    opacity: 0.8;
+    transform: translateX(-50%); /* 保持水平居中 */
+  }
+}
+
+/* Extra small devices */
+@media (max-width: 480px) {
+  footer {
+    padding-bottom: 70px; /* Slightly less padding for smaller screens */
+  }
+
+  .back-to-top {
+    bottom: 15px;
+    padding: 8px 20px; /* 保持宽度自适应 */
+    font-size: 14px;
   }
 }

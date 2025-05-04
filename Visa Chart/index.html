@@ -92,16 +92,8 @@
         .attr("stroke-width", 3)
         .attr("d", line);
 
-      // Animate the line
-      const totalLength = path.node().getTotalLength();
-
-      path
-        .attr("stroke-dasharray", totalLength + " " + totalLength)
-        .attr("stroke-dashoffset", totalLength)
-        .transition()
-        .duration(3000)
-        .ease(d3.easeCubic)
-        .attr("stroke-dashoffset", 0);
+      // Animate the line with normal pop-up style
+      path.attr("opacity", 0).transition().duration(1000).ease(d3.easeCubicOut).attr("opacity", 1);
     </script>
   </body>
 </html>

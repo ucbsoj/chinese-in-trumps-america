@@ -3,6 +3,7 @@
   width: 100%;
   max-width: 1000px;
   margin: 2rem auto;
+  padding-bottom: 2rem;
   position: relative;
   will-change: transform; /* Hint to browser about upcoming changes */
 }

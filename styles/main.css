@@ -103,7 +103,7 @@ p {
 }
 
 h1 {
-  font-size: 4rem;
+  font-size: 3rem;
   font-family: Postoni Standard, Postoni, BodoniSvtyTwoITCTT-Book, georgia, serif;
   font-weight: bold;
   line-height: 1.1;
@@ -122,7 +122,7 @@ h1 {
   line-height: 1.4;
   margin-top: 0;
   margin-bottom: 2rem;
-  color: rgb(106, 105, 105);
+  color: rgb(68, 67, 67);
   text-align: left;
   max-width: 800px;
   margin: 0 auto;
@@ -134,7 +134,7 @@ h1 {
   font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
   font-weight: normal;
   line-height: 1.3;
-  color: rgb(106, 105, 105);
+  color: rgb(68, 67, 67);
   margin-top: 1.5rem;
   margin-bottom: 3rem;
   text-align: center;
@@ -169,10 +169,11 @@ h2 {
   margin-inline-end: 0px;
   font-weight: bold;
   text-align: center;
+  margin-bottom: 2rem;
 }
 
 section {
-  padding: 0 0 10vh;
+  padding: 0 0 5vh;
 }
 
 .us-part {
@@ -180,12 +181,22 @@ section {
 }
 
 .deportation-part {
-  margin-top: 5rem;
+  margin-top: 7rem;
 }
 
 .hidden {
   opacity: 0;
   transition: opacity 1s ease-in-out;
+}
+
+figure.news-app-figure {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+figure.news-app-figure img {
+  width: 150%;
 }
 
 .overlay-text {
@@ -228,8 +239,17 @@ section {
 
 .process-chart {
   text-align: center;
-  margin-top: 4rem;
+  margin: 0 auto;
   width: 100%;
+  max-width: 1000px;
+}
+
+.process-chart img {
+  margin-top: 3rem;
+  margin-bottom: 2rem;
+  padding-left: 3rem;
+  width: 100%;
+  max-width: 1000px;
 }
 
 .image-content {
@@ -269,15 +289,19 @@ section {
   }
 }
 
-p {
-  font-size: 16px;
+.hero-text {
+  margin-bottom: 5rem;
+}
+
+.future-part {
+  margin-top: 3rem;
 }
 
 .subhead-icon {
   text-align: center;
   margin: 0 auto;
   width: 100%;
-  max-width: 100px;
+  max-width: 200px;
   display: flex;
   justify-content: center;
 }
@@ -310,6 +334,24 @@ p {
     font-size: 12px;
     padding: 5px 5px 0;
     line-height: 1.3;
+  }
+
+  /* 调整hero image在更小屏幕上的显示 */
+  #bg {
+    object-fit: cover;
+    object-position: center 25%; /* 在更小的屏幕上显示更多上部内容 */
+    width: 100%;
+    height: 100vh;
+    transform: scale(1.3); /* 在更小的屏幕上放大更多 */
+    transform-origin: center;
+    background-color: #000;
+  }
+
+  .hero {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
   }
 }
 
@@ -376,14 +418,14 @@ p {
 
   /* Responsive styles for news app image on mobile */
   figure.news-app-figure {
-    max-width: 350px;
+    max-width: 90%; /* Use percentage for better responsiveness */
     margin: 1.5rem auto;
   }
 
   figure.news-app-figure figcaption {
     font-size: 13px;
     padding: 6px 5px 0;
-    text-align: left;
+    text-align: center;
   }
 
   /* Responsive styles for card on mobile */
@@ -420,16 +462,26 @@ figcaption {
 
 /* Special styling for news app image */
 figure.news-app-figure {
-  max-width: 450px;
+  max-width: 600px; /* Match text width */
   margin: 2rem auto;
-  display: block;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
 }
 
 figure.news-app-figure img {
-  width: 100%;
+  width: 100%; /* Full width of container */
   height: auto;
   object-fit: contain;
   display: block;
+  margin: 0 auto;
+}
+
+figure.news-app-figure figcaption {
+  text-align: left;
+  margin-top: 10px;
+  width: 100%;
 }
 
 /* Card with multiple images in a row */
@@ -473,13 +525,6 @@ figcaption.italic {
   font-style: italic !important;
 }
 
-/* Centered figcaption style */
-figcaption.centered {
-  text-align: center !important;
-  width: 100%;
-  margin: 10px auto;
-}
-
 /* Image row for displaying two images side by side */
 .image-row {
   display: flex;
@@ -490,7 +535,7 @@ figcaption.centered {
   gap: 15px;
   width: 100%;
   max-width: 1400px; /* Increased max-width for larger container */
-  margin: 2rem auto; /* Center the container */
+  margin: 3rem auto; /* Center the container */
   text-align: center;
 }
 
@@ -515,6 +560,7 @@ figcaption.centered {
   padding-left: 0 !important; /* Remove left padding to align with edge */
   flex-basis: 100%; /* Ensures caption takes full width on new line */
   order: 3; /* Places caption after images */
+  max-width: 600px;
 }
 
 /* Asymmetric image row for displaying two images with different widths */
@@ -526,7 +572,8 @@ figcaption.centered {
   align-items: flex-start;
   gap: 15px;
   width: 100%;
-  max-width: 100%; /* Full width container */
+  padding-top: 2rem;
+  max-width: 90%; /* Full width container */
   margin: 0 auto 1rem auto; /* Reduced margin */
   text-align: center;
 }
@@ -591,6 +638,16 @@ figcaption.centered {
   .hero {
     position: relative; /* Change from fixed if it was fixed */
     height: 100vh;
+  }
+
+  #bg {
+    object-fit: cover; /* 保持cover以填满容器 */
+    object-position: center 30%; /* 调整垂直位置，显示更多上部内容 */
+    width: 100%; /* 确保宽度填满 */
+    height: 100vh; /* 保持高度 */
+    transform: scale(1.2); /* 放大图片以显示更多内容 */
+    transform-origin: center; /* 从中心点放大 */
+    background-color: #000; /* 添加背景色填充可能的空白区域 */
   }
 
   /* Ensure scrolling works on mobile */

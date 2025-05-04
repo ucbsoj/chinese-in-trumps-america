@@ -66,7 +66,9 @@ async function draw() {
     .attr("stroke", "black") // 边框颜色
     .attr("stroke-width", 1) // 边框宽度
     .transition() // 开始过渡动画
-    .duration(1000) // 动画持续时间1秒
+    .duration(800) // 动画持续时间 - shorter for pop-up effect
+    .delay((d, i) => i * 10) // 减少延迟时间，让所有条形几乎同时出现
+    .ease(d3.easeCubicOut) // 使用简单的缓动效果，没有弹性
     .attr("y", (d) => yScale(yAccessor(d))) // 目标位置
     .attr("height", (d) => dimensions.ctrHeight - yScale(yAccessor(d))); // 目标高度
 
