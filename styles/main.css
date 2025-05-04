@@ -586,3 +586,25 @@ figcaption.centered {
     text-align: left;
   }
 }
+
+@media (max-width: 768px) {
+  .hero {
+    position: relative; /* Change from fixed if it was fixed */
+    height: 100vh;
+  }
+
+  /* Ensure scrolling works on mobile */
+  html,
+  body {
+    overflow-x: hidden;
+    overflow-y: auto;
+    height: auto;
+    -webkit-overflow-scrolling: touch;
+  }
+
+  /* Fix for Mapbox on mobile
+  .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan,
+  .mapboxgl-canvas-container.mapboxgl-touch-zoom-rotate.mapboxgl-touch-drag-pan .mapboxgl-canvas {
+    touch-action: pan-x pan-y;
+  } */
+}
