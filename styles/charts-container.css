@@ -5,9 +5,9 @@
   flex-wrap: wrap;
   justify-content: space-between;
   align-items: flex-start;
-  gap: 20px;
-  width: 100%;
-  max-width: 120%; /* Exceed the width of body text */
+  gap: 10px;
+  width: 80%;
+  max-width: 110%; /* Exceed the width of body text */
   margin: 2rem auto;
 }
 

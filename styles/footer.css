@@ -1,6 +1,6 @@
 /* Footer styles */
 footer {
-  background-color: #f2f2f2;
+  background-color: #242323;
   padding: 30px 20px;
   margin-top: 50px;
   text-align: center;
@@ -22,12 +22,14 @@ footer {
 footer h4 {
   font-size: 18px;
   margin: 0;
-  color: #333;
+  color: #ffffff;
 }
 
 footer p {
+  text-align: left;
+  font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
   font-size: 14px;
-  color: #666;
+  color: #ffffff;
   max-width: 800px;
   margin: 0 auto;
   line-height: 1.5;
@@ -58,16 +60,16 @@ footer p {
   footer {
     padding: 20px 15px;
   }
-  
+
   .footer-top {
     flex-direction: column;
     gap: 15px;
   }
-  
+
   footer h4 {
     font-size: 16px;
   }
-  
+
   footer p {
     font-size: 13px;
   }

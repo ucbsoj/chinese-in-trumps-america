@@ -1,4 +1,12 @@
+// Make draw function available globally
 async function draw() {
+  // Clear any existing chart content completely
+  const chartElement = document.getElementById("chart");
+  chartElement.innerHTML = "";
+
+  // Remove any tooltips that might be lingering
+  d3.selectAll("#tooltip").style("display", "none");
+
   // Data
   const dataset = await d3.csv("edit-data/data.csv");
 
@@ -6,22 +14,30 @@ async function draw() {
   const xAccessor = (d) => parseDate(d.date);
   const yAccessor = (d) => parseInt(d.number);
 
-  // Dimensions
+  // Get container width for responsive design
+  const containerWidth = document.getElementById("d3-container").clientWidth;
+
+  // Dimensions - make responsive
   let dimensions = {
-    width: 1000,
-    height: 500,
-    margins: 50,
+    width: Math.min(1000, containerWidth),
+    height: Math.min(500, containerWidth * 0.5),
+    margins: containerWidth < 600 ? 30 : 50,
   };
 
   dimensions.ctrWidth = dimensions.width - dimensions.margins * 2;
   dimensions.ctrHeight = dimensions.height - dimensions.margins * 2;
 
-  // Draw Image
+  // Draw Image - first remove any existing SVG to prevent duplication
+  d3.select("#chart svg").remove();
+
   const svg = d3
     .select("#chart")
     .append("svg")
-    .attr("width", dimensions.width)
-    .attr("height", dimensions.height);
+    .attr("width", "100%")
+    .attr("height", "100%")
+    .attr("viewBox", `0 0 ${dimensions.width} ${dimensions.height}`)
+    .attr("preserveAspectRatio", "xMidYMid meet")
+    .attr("class", "d3-chart-svg"); // Add a class for easier selection
 
   const ctr = svg
     .append("g") // <g>
@@ -53,6 +69,7 @@ async function draw() {
   // 设置条形宽度为x轴范围的1/2或其他适合的宽度
   const barWidth = (dimensions.ctrWidth / dataset.length) * 0.8;
 
+  // Create bars with staggered animation
   ctr
     .selectAll("rect")
     .data(dataset)
@@ -66,7 +83,9 @@ async function draw() {
     .attr("stroke", "black") // 边框颜色
     .attr("stroke-width", 1) // 边框宽度
     .transition() // 开始过渡动画
-    .duration(1000) // 动画持续时间1秒
+    .duration(1200) // 动画持续时间
+    .delay((d, i) => i * 25) // 添加延迟，使每个条形依次出现
+    .ease(d3.easeElastic.amplitude(0.5)) // 使用弹性缓动效果
     .attr("y", (d) => yScale(yAccessor(d))) // 目标位置
     .attr("height", (d) => dimensions.ctrHeight - yScale(yAccessor(d))); // 目标高度
 
@@ -76,11 +95,12 @@ async function draw() {
   const xAxisGroup = ctr
     .append("g")
     .call(xAxis)
-    .style("transform", `translateY(${dimensions.ctrHeight}px)`);
+    .style("transform", `translateY(${dimensions.ctrHeight}px)`)
+    .style("font-family", "Arial, sans-serif");
 
   const yAxis = d3.axisLeft(yScale).tickFormat((d) => `${d}`);
 
-  const yAxisGroup = ctr.append("g").call(yAxis);
+  const yAxisGroup = ctr.append("g").call(yAxis).style("font-family", "Arial, sans-serif");
 
   // Tooltip
   ctr
@@ -88,7 +108,7 @@ async function draw() {
     .attr("width", dimensions.ctrWidth)
     .attr("height", dimensions.ctrHeight)
     .style("opacity", 0)
-    .on("touchmouse mousemove", function (event) {
+    .on("mousemove touchmove", function (event) {
       const mousePos = d3.pointer(event, this);
       const date = xScale.invert(mousePos[0]); // 把横坐标逆转换为date, mousePos[0]是鼠标位置的横坐标
       // const index = d3.bisector(dataset, date) 行不通因为d3.biscet不能自动识别object的位置因此需要自创一个bisector
@@ -151,7 +171,7 @@ async function draw() {
     .attr("x", xScale(new Date(2022, 3)) + 20) // X轴偏移一些
     .attr("y", yScale(1500)) // Y轴位置
     .style("font-size", "13px")
-    .style("font-family", "Arial")
+    .style("font-family", "Arial, sans-serif")
     .style("fill", "black")
     .style("font-weight", "500")
     .selectAll("tspan")
@@ -188,4 +208,4 @@ async function draw() {
     .attr("fill", "black");
 }
 
-draw();
+// Chart will be drawn by scroll-animation.js when scrolled into view

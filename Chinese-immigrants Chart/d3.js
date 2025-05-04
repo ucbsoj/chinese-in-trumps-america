@@ -88,7 +88,7 @@ async function draw() {
     .attr("width", dimensions.ctrWidth)
     .attr("height", dimensions.ctrHeight)
     .style("opacity", 0)
-    .on("touchmouse mousemove", function (event) {
+    .on("mousemove touchmove", function (event) {
       const mousePos = d3.pointer(event, this);
       const date = xScale.invert(mousePos[0]); // 把横坐标逆转换为date, mousePos[0]是鼠标位置的横坐标
       // const index = d3.bisector(dataset, date) 行不通因为d3.biscet不能自动识别object的位置因此需要自创一个bisector

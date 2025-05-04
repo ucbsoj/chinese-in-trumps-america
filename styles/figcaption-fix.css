@@ -12,7 +12,7 @@ figcaption + p,
 
 /* Ensure proper spacing between figcaption and following content */
 .sidebar-story-content p:first-of-type {
-  margin-top: 35px; /* Add extra space at the top of the first paragraph */
+  margin-top: 0px; /* Add extra space at the top of the first paragraph */
   padding-top: 10px; /* Additional padding to prevent overlap */
 }
 
@@ -22,3 +22,36 @@ figcaption + p,
   padding-top: 10px; /* Additional padding */
   position: relative; /* Create a new stacking context */
 }
+
+/* Ensure all figcaptions are visible */
+figcaption,
+.image-caption {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  clear: both !important;
+}
+
+/* Specific fix for sidebar story figcaptions */
+.sidebar-story-image figcaption,
+.sidebar-story-image .image-caption {
+  visibility: visible !important;
+  opacity: 1 !important;
+  display: block !important;
+  clear: both !important;
+  position: relative !important;
+  z-index: 5 !important;
+  margin-top: 10px !important;
+  margin-bottom: 0 !important;
+  padding-bottom: 10px !important;
+  text-align: left !important;
+}
+
+/* Ensure paragraphs in the immigration part are properly aligned */
+/* .immigration-part p {
+  margin-left: 0 !important;
+  text-align: left !important;
+  float: none !important;
+  clear: both !important;
+  max-width: 600px !important;
+} */

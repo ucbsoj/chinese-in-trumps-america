@@ -3,7 +3,6 @@
 @import url("footer.css");
 @import url("text-image-layout.css");
 @import url("figcaption-fix.css");
-@import url("charts-container.css");
 @import url("charts-row.css");
 @import url("d3-container.css");
 @import url("carousel.css");
@@ -12,13 +11,27 @@ html,
 body {
   font-family: "lora", Georgia, "Times New Roman", Times, serif;
   font-size: 21px;
-  margin: 0;
+  margin: 0 auto;
   display: block;
   background-color: #f2f2f2;
   height: 100%;
-  display: flex;
-  flex-direction: column;
+  /* display: flex;
+  flex-direction: column; */
   min-height: 100vh;
+}
+
+p {
+  max-width: 600px;
+  margin: 1rem auto;
+  font-family: Georgia, "Times New Roman", serif;
+  font-size: 21px;
+  line-height: 1.6;
+  color: #000000;
+}
+
+.immigration-part {
+  margin-top: 5rem;
+  text-align: left;
 }
 
 #progress-container {
@@ -94,10 +107,12 @@ h1 {
   font-family: Postoni Standard, Postoni, BodoniSvtyTwoITCTT-Book, georgia, serif;
   font-weight: bold;
   line-height: 1.1;
-  margin-bottom: 1.5rem;
   color: rgb(0, 0, 0);
   text-align: center;
   letter-spacing: 0.02em;
+  max-width: 600px;
+  margin: 2rem auto;
+  padding-top: 2rem;
 }
 
 .deck {
@@ -110,6 +125,8 @@ h1 {
   color: rgb(106, 105, 105);
   text-align: left;
   max-width: 800px;
+  margin: 0 auto;
+  max-width: 600px;
 }
 
 .author {
@@ -128,16 +145,6 @@ h1 {
   opacity: 1;
 }
 
-.story-body {
-  max-width: 600px;
-  margin: 4rem auto;
-  padding: 0 3rem;
-  font-family: Georgia, "Times New Roman", serif;
-  font-size: 21px;
-  line-height: 1.6;
-  color: #000000;
-}
-
 .dropcap {
   float: left;
   font-size: 75px;
@@ -148,6 +155,10 @@ h1 {
   padding-right: 7px;
   padding-left: 3px;
   color: rgb(34, 28, 28);
+}
+
+.immigration {
+  padding: 0 0 2vh;
 }
 
 h2 {
@@ -161,7 +172,15 @@ h2 {
 }
 
 section {
-  padding: 0 0 15vh;
+  padding: 0 0 10vh;
+}
+
+.us-part {
+  margin-top: 5rem;
+}
+
+.deportation-part {
+  margin-top: 5rem;
 }
 
 .hidden {
@@ -207,6 +226,24 @@ section {
   transition: opacity 1s ease-in-out;
 }
 
+.process-chart {
+  text-align: center;
+  margin-top: 4rem;
+  width: 100%;
+}
+
+.image-content {
+  float: left;
+  max-width: 700px;
+  margin-left: 40px;
+  margin-right: 20px;
+}
+
+.image-content img {
+  width: 100%;
+  max-width: 600px;
+}
+
 @media (max-width: 1000px) {
   .overlay-text .headline {
     font-size: 3rem;
@@ -234,6 +271,21 @@ section {
 
 p {
   font-size: 16px;
+}
+
+.subhead-icon {
+  text-align: center;
+  margin: 0 auto;
+  width: 100%;
+  max-width: 100px;
+  display: flex;
+  justify-content: center;
+}
+
+.subhead-icon img {
+  width: 100%;
+  display: block;
+  margin: 0 auto;
 }
 
 .fast-fade {
@@ -265,7 +317,7 @@ p {
   width: 100vw;
   margin-left: calc(-50vw + 50%);
   margin-right: calc(-50vw + 50%);
-  margin-bottom: 2rem;
+  margin-bottom: 3rem;
   margin-top: 2rem;
   position: relative;
   text-align: center; /* Center the image */
@@ -413,12 +465,19 @@ figure.card figcaption {
   margin: 0 auto;
   padding-left: 3rem;
   padding-right: 3rem;
-  font-style: normal;
+  font-style: italic;
 }
 
 /* Italic figcaption style */
 figcaption.italic {
   font-style: italic !important;
+}
+
+/* Centered figcaption style */
+figcaption.centered {
+  text-align: center !important;
+  width: 100%;
+  margin: 10px auto;
 }
 
 /* Image row for displaying two images side by side */
@@ -436,8 +495,8 @@ figcaption.italic {
 }
 
 .image-row img {
-  width: calc(50% - 10px); /* Calculate width accounting for gap */
-  max-width: 800px; /* Increased max-width for larger images */
+  width: calc(45% - 10px); /* Reduced width from 50% to 45% */
+  max-width: 650px; /* Reduced max-width from 800px to 650px */
   height: auto;
   object-fit: contain;
   display: inline-block;
@@ -452,7 +511,7 @@ figcaption.italic {
   max-width: 1400px;
   font-style: normal;
   color: #666;
-  font-size: 15px;
+  font-size: 14px;
   padding-left: 0 !important; /* Remove left padding to align with edge */
   flex-basis: 100%; /* Ensures caption takes full width on new line */
   order: 3; /* Places caption after images */

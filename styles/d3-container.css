@@ -3,30 +3,45 @@
   max-width: 1000px;
   margin: 0 auto;
   overflow-x: auto;
+  margin-bottom: 50px;
 }
 
 .chart-title {
   font-size: 1.5rem;
   margin-bottom: 0.5rem;
   text-align: left;
+  font-family: Arial, sans-serif;
 }
 
 .chart-subtitle {
+  max-width: 1000px;
   font-size: 1rem;
   margin-bottom: 1rem;
   text-align: left;
+  font-family: Arial, sans-serif;
 }
 
 .chart-source {
+  max-width: 1000px;
   font-size: 0.8rem;
   margin-top: 0.5rem;
   text-align: left;
+  font-family: Arial, sans-serif;
 }
 
 #chart {
   margin: 25px auto;
-  width: 1000px;
+  width: 100%;
+  max-width: 1000px;
   position: relative;
+  height: auto;
+  aspect-ratio: 2 / 1;
+  overflow: visible;
+}
+
+/* Ensure only one SVG is displayed */
+#chart svg:not(:first-child) {
+  display: none !important;
 }
 
 #tooltip {
@@ -37,10 +52,33 @@
   display: none;
   pointer-events: none;
   text-align: center;
+  font-family: Arial, sans-serif;
 }
 
 @media (max-width: 1020px) {
   #d3-container {
     padding: 0 10px;
+  }
+
+  .chart-title {
+    font-size: 1.3rem;
+  }
+
+  .chart-subtitle {
+    font-size: 0.9rem;
+  }
+}
+
+@media (max-width: 600px) {
+  #chart {
+    aspect-ratio: 1.5 / 1;
+  }
+
+  .chart-title {
+    font-size: 1.1rem;
+  }
+
+  .chart-subtitle {
+    font-size: 0.8rem;
   }
 }
