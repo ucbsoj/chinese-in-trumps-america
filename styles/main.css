@@ -665,3 +665,45 @@ figcaption.italic {
     touch-action: pan-x pan-y;
   } */
 }
+
+/* Mobile Back to Top Button */
+.mobile-back-to-top {
+  display: none;
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  background-color: rgba(0, 0, 0, 0.7);
+  color: white;
+  border: none;
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  font-size: 20px;
+  text-align: center;
+  z-index: 1000;
+  cursor: pointer;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
+}
+
+@media (max-width: 768px) {
+  .mobile-back-to-top {
+    display: block;
+  }
+  
+  /* Ensure body can scroll on mobile */
+  body {
+    overflow-y: auto !important;
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Fix map container for mobile scrolling */
+  #map {
+    position: sticky !important;
+    touch-action: pan-y pinch-zoom !important;
+  }
+  
+  /* Ensure the mapbox container allows scrolling */
+  .mapboxgl-canvas-container {
+    touch-action: pan-y pinch-zoom !important;
+  }
+}

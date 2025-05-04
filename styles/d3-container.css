@@ -16,11 +16,12 @@
 
 .chart-subtitle {
   max-width: 1000px;
-  font-size: 1rem;
+  font-size: 0.9rem;
   margin: 0.5rem 0;
   text-align: center;
   font-family: Arial, sans-serif;
-  color: #444343;
+  color: #080808;
+  font-style: italic;
 }
 
 .chart-source {
