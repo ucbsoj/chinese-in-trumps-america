@@ -103,7 +103,7 @@ p {
 }
 
 h1 {
-  font-size: 3rem;
+  font-size: 2.5rem;
   font-family: Postoni Standard, Postoni, BodoniSvtyTwoITCTT-Book, georgia, serif;
   font-weight: bold;
   line-height: 1.1;
@@ -116,7 +116,7 @@ h1 {
 }
 
 .deck {
-  font-size: 24px;
+  font-size: 22px;
   font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
   font-weight: normal;
   line-height: 1.4;
@@ -649,8 +649,8 @@ figcaption.italic {
   body {
     overflow-x: hidden;
     overflow-y: auto;
-    height: auto;
-    -webkit-overflow-scrolling: touch;
+    /* height: auto;
+    -webkit-overflow-scrolling: touch; */
   }
 }
 
@@ -679,7 +679,7 @@ figcaption.italic {
 }
 
 /* Mobile Back to Top Button */
-.mobile-back-to-top {
+/* .mobile-back-to-top {
   display: none;
   position: fixed;
   bottom: 20px;
@@ -695,13 +695,13 @@ figcaption.italic {
   z-index: 1000;
   cursor: pointer;
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.3);
-}
+} */
 
 @media (max-width: 768px) {
-  /* Show Back to Top button on mobile */
+  /* Show Back to Top button on mobile
   .mobile-back-to-top {
     display: block;
-  }
+  } */
 
   /* Ensure body can scroll on mobile */
   body {
