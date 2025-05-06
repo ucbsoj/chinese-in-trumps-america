@@ -245,6 +245,11 @@
             </p>
           </div>
           <!-- <div style="height: 20vh"></div> -->
+
+          <div class="subhead-icon">
+            <img src="assets/border-new.png" alt="tower icon" />
+          </div>
+
           <div class="lead">
             <p>
               <span class="dropcap">A</span>
@@ -296,11 +301,10 @@
                 <strong>68,000</strong>
                 Chinese migrants have been apprehended crossing from Mexico since 2022
               </p>
-              <div id="chart">
-                <div id="tooltip">
-                  <div class="number"></div>
-                  <div class="date"></div>
-                </div>
+              <div id="chart"></div>
+              <div id="tooltip">
+                <div class="number"></div>
+                <div class="date"></div>
               </div>
               <p class="chart-source">
                 Source:
@@ -1463,12 +1467,9 @@
     <script src="scripts/progress-bar.js"></script>
     <script src="scripts/carousel.js"></script>
     <script src="https://d3js.org/d3.v6.js"></script>
-    <script src="scripts/d3.js"></script>
     <script src="scripts/scroll-animation.js"></script>
     <!-- <script src="https://cdnjs.cloudflare.com/ajax/libs/skrollr/0.6.30/skrollr.min.js"></script> -->
     <script>
-      skrollr.init();
-
       // Function to open the sidebar with a specific story
       function openSidebar(storyId) {
         // Default to the first story if no ID is provided
