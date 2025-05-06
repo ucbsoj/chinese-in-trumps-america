@@ -57,7 +57,7 @@ p {
 .hero {
   position: relative;
   top: 0;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   z-index: 1;
   display: flex;
@@ -69,22 +69,22 @@ p {
   text-align: center;
 }
 
-.hero-content {
-  position: relative;
-  z-index: 2;
-  color: white;
-  text-align: center;
-}
-
 #bg {
   position: absolute;
   top: 0;
   left: 0;
-  height: 100vh;
+  height: 90vh;
   width: 100vw;
   object-fit: cover;
   z-index: 1;
 }
+
+/* .hero-content {
+  position: relative;
+  z-index: 2;
+  color: white;
+  text-align: center;
+} */
 
 #char {
   opacity: 0;
@@ -110,8 +110,8 @@ h1 {
   color: rgb(0, 0, 0);
   text-align: center;
   letter-spacing: 0.02em;
-  max-width: 600px;
-  margin: 2rem auto;
+  max-width: 800px;
+  margin: 0.5rem auto 1rem;
 }
 
 .deck {
@@ -119,12 +119,11 @@ h1 {
   font-family: "Libre Franklin", Arial, Helvetica, sans-serif;
   font-weight: normal;
   line-height: 1.4;
-  margin-top: 0;
   margin-bottom: 2rem;
   color: rgb(68, 67, 67);
   text-align: center;
   max-width: 800px;
-  margin: 0 auto;
+  margin: 2rem auto 0;
   max-width: 600px;
 }
 
@@ -215,6 +214,10 @@ figure.news-app-figure img {
   justify-content: center;
 }
 
+.headline {
+  padding-top: 0;
+}
+
 /* Hero-specific styles for headline, deck, and author */
 .overlay-text .headline {
   color: rgb(255, 255, 255);
@@ -289,7 +292,7 @@ figure.news-app-figure img {
 }
 
 .hero-text {
-  margin-bottom: 5rem;
+  margin-bottom: 0rem;
 }
 
 .future-part {
